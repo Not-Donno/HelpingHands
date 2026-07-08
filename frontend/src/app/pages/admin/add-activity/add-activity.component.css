@@ -1,0 +1,3 @@
+.activity-form { max-width: 780px; }
+.form-actions { display: flex; justify-content: flex-end; gap: .6rem; margin-top: 1rem; }
+.error { color: var(--danger); font-size: .85rem; }

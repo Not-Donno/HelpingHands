@@ -1,0 +1,19 @@
+import { Injectable } from '@angular/core';
+import { CanActivate, Router, UrlTree, ActivatedRouteSnapshot } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+
+@Injectable({ providedIn: 'root' })
+export class AuthGuard implements CanActivate {
+  constructor(private auth: AuthService, private router: Router) {}
+
+  canActivate(route: ActivatedRouteSnapshot): boolean | UrlTree {
+    if (!this.auth.isLoggedIn()) {
+      return this.router.parseUrl('/login');
+    }
+    const requiredRole = route.data['role'] as string | undefined;
+    if (requiredRole && this.auth.currentUser?.role !== requiredRole) {
+      return this.router.parseUrl(this.auth.isAdmin() ? '/admin/dashboard' : '/employee/dashboard');
+    }
+    return true;
+  }
+}

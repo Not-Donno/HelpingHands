@@ -1,0 +1,59 @@
+<div class="login-wrap">
+  <div class="login-panel">
+    <form class="login-card" (ngSubmit)="submit()">
+      <div class="login-brand">
+        <span class="brand-mark"><i class="bi bi-shield-check"></i></span>
+        <span class="brand-name">HelpingHands</span>
+      </div>
+
+      <h2>Welcome back</h2>
+      <p class="subtitle">Sign in to your HelpingHands account</p>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" [(ngModel)]="email" placeholder="you@company.com" autocomplete="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" [(ngModel)]="password" placeholder="Enter your password" autocomplete="current-password" />
+      </div>
+
+      <p class="error" *ngIf="errorMessage"><i class="bi bi-exclamation-circle"></i> {{ errorMessage }}</p>
+
+      <button class="btn btn-primary full-width" type="submit" [disabled]="loading">
+        {{ loading ? 'Signing in...' : 'Sign In' }}
+      </button>
+
+      <div class="demo-row">
+        <span>Try a demo account</span>
+        <div class="demo-buttons">
+          <button type="button" class="btn btn-outline btn-sm" (click)="fillDemo('employee')"><i class="bi bi-person"></i> Employee</button>
+          <button type="button" class="btn btn-outline btn-sm" (click)="fillDemo('admin')"><i class="bi bi-person-badge"></i> Admin</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="login-media">
+    <div class="login-media-overlay">
+      <blockquote>
+        "Service Day gives every one of us the chance to give something back to the community."
+      </blockquote>
+      <div class="stat-row">
+        <div>
+          <div class="stat-value">40+</div>
+          <div class="stat-label">Partner NGOs</div>
+        </div>
+        <div>
+          <div class="stat-value">1,200+</div>
+          <div class="stat-label">Volunteers</div>
+        </div>
+        <div>
+          <div class="stat-value">300+</div>
+          <div class="stat-label">Activities run</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<app-spinner *ngIf="loading" label="Loading your dashboard..."></app-spinner>
+
+<div *ngIf="!loading">
+  <h2>My Dashboard</h2>
+
+  <div class="grid grid-3" style="margin-bottom: 1.5rem;">
+    <app-stats-card label="My Registrations" [value]="myRegistrationsCount" icon="bi-journal-text" accent="primary"></app-stats-card>
+    <app-stats-card label="Checked In" [value]="myCheckedInCount" icon="bi-patch-check" accent="accent"></app-stats-card>
+    <app-stats-card label="Upcoming Activities" [value]="upcomingActivities.length" icon="bi-calendar-event" accent="primary"></app-stats-card>
+  </div>
+
+  <h3>Your Upcoming Activities</h3>
+  <div class="grid grid-2" *ngIf="upcomingActivities.length; else noneUpcoming">
+    <app-activity-card *ngFor="let a of upcomingActivities" [activity]="a"></app-activity-card>
+  </div>
+  <ng-template #noneUpcoming>
+    <p class="muted">You have no upcoming registered activities yet. Browse activities to get started!</p>
+  </ng-template>
+
+  <h3 style="margin-top: 2rem;">Recommended For You</h3>
+  <div class="grid grid-2" *ngIf="recommendedActivities.length; else noneRecommended">
+    <app-activity-card *ngFor="let a of recommendedActivities" [activity]="a"></app-activity-card>
+  </div>
+  <ng-template #noneRecommended>
+    <p class="muted">No open activities available right now. Check back soon!</p>
+  </ng-template>
+</div>

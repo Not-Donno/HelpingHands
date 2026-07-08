@@ -1,0 +1,32 @@
+<div class="header-row">
+  <h2>Participation Reports</h2>
+  <button class="btn btn-primary" (click)="exportCsv()" [disabled]="loading || !rows.length">Export CSV</button>
+</div>
+
+<app-spinner *ngIf="loading" label="Generating report..."></app-spinner>
+
+<div class="card" *ngIf="!loading">
+  <table>
+    <thead>
+      <tr>
+        <th>Activity</th><th>NGO</th><th>Date</th><th>Total Slots</th><th>Registered</th><th>Checked In</th><th>Fill Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of rows">
+        <td>{{ r.title }}</td>
+        <td>{{ r.ngoName }}</td>
+        <td>{{ r.date }}</td>
+        <td>{{ r.totalSlots }}</td>
+        <td>{{ r.registeredSlots }}</td>
+        <td>{{ r.checkedInCount }}</td>
+        <td>
+          <div class="fill-bar">
+            <div class="fill-bar-inner" [style.width.%]="r.fillRatePercent"></div>
+          </div>
+          {{ r.fillRatePercent }}%
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

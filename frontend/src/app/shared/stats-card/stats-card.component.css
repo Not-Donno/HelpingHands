@@ -1,0 +1,17 @@
+.stats-card { display: flex; align-items: center; gap: 1rem; }
+.stats-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  background: var(--primary-light);
+  color: var(--primary);
+}
+.stats-value { font-family: var(--font-display); font-size: 1.55rem; font-weight: 800; color: var(--ink); line-height: 1.15; }
+.stats-label { font-size: .82rem; color: var(--muted); margin-top: .1rem; }
+.accent-accent .stats-icon { background: var(--accent-light); color: var(--accent-dark); }
+.accent-danger .stats-icon { background: var(--danger-light); color: var(--danger); }

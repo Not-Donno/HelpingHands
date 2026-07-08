@@ -1,0 +1,21 @@
+.back-link { display: inline-flex; align-items: center; gap: .3rem; margin-bottom: 1rem; font-size: .88rem; font-weight: 600; }
+.details-card { max-width: 780px; }
+.header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.category { font-size: .74rem; text-transform: uppercase; color: var(--primary); font-weight: 700; letter-spacing: .04em; }
+.ngo-name { color: var(--muted); margin: .2rem 0 0; }
+.description { margin: 1rem 0; line-height: 1.6; }
+.info-grid { margin: 1rem 0 1.5rem; font-size: .9rem; }
+.info-grid > div { line-height: 1.6; }
+.info-grid strong { display: inline-flex; align-items: center; gap: .4rem; color: var(--ink); }
+.info-grid strong i { color: var(--primary); }
+.feedback { color: var(--primary); font-weight: 500; margin-bottom: .8rem; }
+.already-registered {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  color: var(--primary);
+  font-weight: 600;
+  background: var(--success-light);
+  padding: .7rem .9rem;
+  border-radius: var(--radius-sm);
+}

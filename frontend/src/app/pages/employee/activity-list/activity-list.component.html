@@ -1,0 +1,29 @@
+<h2>Service Day Activities</h2>
+
+<div class="filters card">
+  <input
+    type="text"
+    placeholder="Search by title or NGO..."
+    [(ngModel)]="searchTerm"
+    (ngModelChange)="applyFilters()" />
+
+  <select [(ngModel)]="categoryFilter" (ngModelChange)="applyFilters()">
+    <option value="all">All Categories</option>
+    <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+  </select>
+
+  <select [(ngModel)]="statusFilter" (ngModelChange)="applyFilters()">
+    <option value="all">All Statuses</option>
+    <option value="open">Open</option>
+    <option value="full">Full</option>
+    <option value="closed">Closed</option>
+  </select>
+</div>
+
+<app-spinner *ngIf="loading" label="Loading activities..."></app-spinner>
+
+<div class="grid grid-2" *ngIf="!loading && filtered.length">
+  <app-activity-card *ngFor="let a of filtered" [activity]="a"></app-activity-card>
+</div>
+
+<p class="muted" *ngIf="!loading && !filtered.length">No activities match your filters.</p>

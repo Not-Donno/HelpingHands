@@ -1,0 +1,22 @@
+<div class="card activity-card">
+  <div class="thumb" [style.backgroundImage]="'url(' + thumbnail + ')'">
+    <span class="badge thumb-badge" [ngClass]="badgeClass">{{ activity.status | titlecase }}</span>
+  </div>
+  <div class="activity-card-header">
+    <span class="category">{{ activity.category }}</span>
+  </div>
+  <h3>{{ activity.title }}</h3>
+  <p class="ngo-name">by {{ activity.ngoName }}</p>
+  <p class="description">{{ activity.description }}</p>
+  <div class="meta">
+    <span><i class="bi bi-calendar-event"></i> {{ activity.date }}</span>
+    <span><i class="bi bi-clock"></i> {{ activity.startTime }} - {{ activity.endTime }}</span>
+  </div>
+  <div class="meta">
+    <span><i class="bi bi-geo-alt"></i> {{ activity.location }}</span>
+  </div>
+  <div class="footer-row">
+    <span class="slots">{{ slotsLeft }} / {{ activity.totalSlots }} slots left</span>
+    <a class="btn btn-primary" [routerLink]="[linkPrefix, activity.id]">View Details</a>
+  </div>
+</div>

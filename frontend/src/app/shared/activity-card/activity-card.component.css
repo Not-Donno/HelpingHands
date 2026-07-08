@@ -1,0 +1,36 @@
+.activity-card { display: flex; flex-direction: column; gap: .4rem; padding: 0; overflow: hidden; }
+.thumb {
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--primary-light);
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: .7rem;
+}
+.thumb-badge { background: rgba(255,255,255,.94); }
+.thumb-badge.badge-open { color: var(--primary); }
+.thumb-badge.badge-full { color: var(--danger); }
+.thumb-badge.badge-closed { color: var(--muted); }
+.activity-card-header,
+.ngo-name,
+.description,
+.meta { padding-left: 1.1rem; padding-right: 1.1rem; }
+.activity-card-header { display: flex; justify-content: space-between; align-items: center; margin-top: .9rem; }
+.activity-card h3 { padding: 0 1.1rem; }
+.category { font-size: .74rem; text-transform: uppercase; color: var(--primary); font-weight: 700; letter-spacing: .04em; }
+.ngo-name { color: var(--muted); font-size: .85rem; margin: 0; }
+.description { font-size: .88rem; color: var(--text); margin: .3rem 0; }
+.meta { display: flex; gap: 1rem; font-size: .82rem; color: var(--muted); }
+.meta i { color: var(--primary); margin-right: .15rem; }
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: .6rem;
+  padding: .9rem 1.1rem 1.1rem;
+  border-top: 1px solid var(--border);
+}
+.slots { font-size: .82rem; font-weight: 600; color: var(--primary); }

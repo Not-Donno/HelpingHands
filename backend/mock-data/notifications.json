@@ -1,0 +1,6 @@
+[
+  { "id": "not1", "title": "New Activity Posted", "message": "Tree Planting Marathon has just opened for registration.", "audience": "all", "createdOn": "2026-07-01T10:00:00", "read": false },
+  { "id": "not2", "title": "Registration Confirmed", "message": "You are confirmed for Community Beach Clean-Up on 25 Jul 2026.", "audience": "emp1", "createdOn": "2026-07-10T09:31:00", "read": false },
+  { "id": "not3", "title": "Slot Almost Full", "message": "After-School Tutoring Drive is now full. Thank you to everyone who registered.", "audience": "all", "createdOn": "2026-07-12T13:00:00", "read": true },
+  { "id": "not4", "title": "Reminder: Check-in Required", "message": "Don't forget to QR check-in when you arrive at your Service Day activity.", "audience": "all", "createdOn": "2026-07-13T09:00:00", "read": false }
+]

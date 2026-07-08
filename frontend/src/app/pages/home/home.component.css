@@ -1,0 +1,78 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: stretch;
+  background: linear-gradient(135deg, var(--ink), var(--primary-dark));
+  color: #fff;
+  min-height: 440px;
+}
+
+.hero-content {
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 560px;
+}
+
+.hero-eyebrow {
+  color: #cfe6dd;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  line-height: 1.15;
+  color: #fff;
+  margin: .3rem 0 .4rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: #dce8e3;
+  margin-bottom: .5rem;
+  max-width: 480px;
+}
+
+.hero-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: .4rem; }
+.hero-outline { color: #fff; border-color: rgba(255,255,255,.45); }
+.hero-outline:hover { background: rgba(255,255,255,.1); }
+
+.hero-media {
+  background-image:
+    linear-gradient(180deg, rgba(15,23,38,0) 40%, rgba(15,23,38,.55) 100%),
+    url('https://commons.wikimedia.org/wiki/Special:FilePath/Beach_Cleaning_Volunteers.jpg?width=1200');
+  background-size: cover;
+  background-position: center;
+}
+
+.section-heading { text-align: center; max-width: 620px; margin: 0 auto 2rem; }
+.section-heading h2 { margin-top: .4rem; }
+
+.feature { text-align: left; padding: 0; overflow: hidden; }
+.feature-media { height: 130px; background-size: cover; background-position: center; }
+.feature-media-1 { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/A_Volunteer_making_a_poster_with_students.jpg?width=500'); }
+.feature-media-2 { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Ray_LaHood_Habitat_for_Humanity_2009_131156.jpg?width=500'); }
+.feature-media-3 { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/George_Washington_University_Community_Garden.jpg?width=500'); }
+.feature-body { padding: 1.25rem 1.35rem 1.5rem; }
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 1.05rem;
+  margin-bottom: .7rem;
+}
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-content { padding: 3rem 1.5rem; max-width: none; }
+  .hero-media { min-height: 220px; }
+}

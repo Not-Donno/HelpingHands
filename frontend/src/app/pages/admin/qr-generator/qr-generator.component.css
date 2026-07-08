@@ -1,0 +1,5 @@
+.qr-card { max-width: 400px; text-align: center; }
+.qr-preview { margin: 1.25rem 0; }
+.qr-preview img { border: 1px solid var(--border); border-radius: 8px; }
+.code-value { font-family: monospace; font-size: .85rem; color: var(--muted); margin-top: .5rem; }
+.muted { color: var(--muted); }

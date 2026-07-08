@@ -1,0 +1,6 @@
+[
+  { "id": "reg1", "activityId": "act1", "employeeId": "emp1", "registeredOn": "2026-07-10T09:30:00", "status": "confirmed", "checkedIn": false, "checkInTime": null },
+  { "id": "reg2", "activityId": "act2", "employeeId": "emp1", "registeredOn": "2026-07-05T11:00:00", "status": "confirmed", "checkedIn": true, "checkInTime": "2026-07-27T14:05:00" },
+  { "id": "reg3", "activityId": "act1", "employeeId": "emp2", "registeredOn": "2026-07-09T15:20:00", "status": "confirmed", "checkedIn": false, "checkInTime": null },
+  { "id": "reg4", "activityId": "act3", "employeeId": "emp3", "registeredOn": "2026-07-11T08:45:00", "status": "cancelled", "checkedIn": false, "checkInTime": null }
+]

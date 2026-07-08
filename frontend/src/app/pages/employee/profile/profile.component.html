@@ -1,0 +1,15 @@
+<h2>My Profile</h2>
+
+<div class="card profile-card" *ngIf="user">
+  <div class="avatar">{{ user.name.charAt(0) }}</div>
+  <div>
+    <h3>{{ user.name }}</h3>
+    <p class="muted">{{ user.email }}</p>
+    <p class="muted">{{ user.department }} Department</p>
+  </div>
+</div>
+
+<div class="grid grid-2" style="margin-top: 1.5rem;">
+  <app-stats-card label="Total Registrations" [value]="totalRegistrations" icon="bi-journal-text" accent="primary"></app-stats-card>
+  <app-stats-card label="Activities Checked Into" [value]="totalCheckedIn" icon="bi-patch-check" accent="accent"></app-stats-card>
+</div>

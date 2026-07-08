@@ -1,0 +1,25 @@
+<h2>QR Check-In</h2>
+<p class="muted">Scan (or type) the QR check-in code shown at your activity venue to confirm your attendance.</p>
+
+<div class="card checkin-card">
+  <div class="form-group">
+    <label for="activity">Activity</label>
+    <select id="activity" [(ngModel)]="selectedActivityId">
+      <option *ngFor="let a of activities" [value]="a.id">{{ a.title }} — {{ a.date }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="code">QR Code Value</label>
+    <input id="code" type="text" [(ngModel)]="scanCode" placeholder="e.g. CHECKIN-ACT1" />
+    <p class="hint" *ngIf="expectedCodeHint">Demo hint: try "{{ expectedCodeHint }}"</p>
+  </div>
+
+  <button class="btn btn-primary" [disabled]="processing || !activities.length" (click)="submitCheckIn()">
+    {{ processing ? 'Checking in...' : 'Check In' }}
+  </button>
+
+  <p class="message" [ngClass]="{ success: success, error: !success }" *ngIf="message">{{ message }}</p>
+
+  <p class="muted" *ngIf="!activities.length">You have no registered activities to check into yet.</p>
+</div>

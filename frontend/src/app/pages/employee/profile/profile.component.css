@@ -1,0 +1,8 @@
+.profile-card { display: flex; align-items: center; gap: 1rem; max-width: 500px; }
+.avatar {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--primary); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; font-weight: 700;
+}
+.muted { color: var(--muted); margin: .1rem 0; }

@@ -1,0 +1,4 @@
+[
+  { "id": "emp1", "name": "Abhinav Singh", "email": "abhinav.singh@helpinghands.com", "department": "Engineering", "password": "password123", "role": "employee", "avatar": "" },
+  { "id": "emp2", "name": "Sabin Khadgi", "email": "sabin.khadgi@company.com", "department": "Marketing", "password": "password123", "role": "employee", "avatar": "" }
+]

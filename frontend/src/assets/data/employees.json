@@ -1,0 +1,6 @@
+[
+  { "id": "emp1", "name": "Aarav Sharma", "email": "aarav.sharma@company.com", "department": "Engineering", "password": "password123", "role": "employee", "avatar": "" },
+  { "id": "emp2", "name": "Maya Gurung", "email": "maya.gurung@company.com", "department": "Marketing", "password": "password123", "role": "employee", "avatar": "" },
+  { "id": "emp3", "name": "Rohan Thapa", "email": "rohan.thapa@company.com", "department": "Finance", "password": "password123", "role": "employee", "avatar": "" },
+  { "id": "admin1", "name": "Sita Adhikari", "email": "sita.adhikari@company.com", "department": "HR & CSR", "password": "admin123", "role": "admin", "avatar": "" }
+]

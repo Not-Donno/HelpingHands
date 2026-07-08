@@ -1,0 +1,30 @@
+<a routerLink="/admin/manage-activities" class="back-link"><i class="bi bi-arrow-left"></i> Back to Manage Activities</a>
+
+<app-spinner *ngIf="loading" label="Loading participants..."></app-spinner>
+
+<div *ngIf="!loading && activity">
+  <h2>Participants — {{ activity.title }}</h2>
+  <p class="muted">{{ rows.length }} registered of {{ activity.totalSlots }} total slots</p>
+
+  <div class="card">
+    <table *ngIf="rows.length; else none">
+      <thead>
+        <tr><th>Name</th><th>Email</th><th>Department</th><th>Registered On</th><th>Check-in Status</th></tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rows">
+          <td>{{ row.employeeName }}</td>
+          <td>{{ row.employeeEmail }}</td>
+          <td>{{ row.department }}</td>
+          <td>{{ row.registration.registeredOn | date:'medium' }}</td>
+          <td>
+            <span class="badge" [ngClass]="row.registration.checkedIn ? 'badge-open' : 'badge-closed'">
+              {{ row.registration.checkedIn ? 'Checked In' : 'Not Checked In' }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #none><p class="muted">No participants registered yet.</p></ng-template>
+  </div>
+</div>

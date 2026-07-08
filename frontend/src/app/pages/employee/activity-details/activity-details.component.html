@@ -1,0 +1,38 @@
+<app-spinner *ngIf="loading" label="Loading activity details..."></app-spinner>
+
+<div *ngIf="!loading && activity">
+  <a routerLink="/employee/activity-list" class="back-link"><i class="bi bi-arrow-left"></i> Back to activities</a>
+
+  <div class="card details-card">
+    <div class="header-row">
+      <div>
+        <span class="category">{{ activity.category }}</span>
+        <h2>{{ activity.title }}</h2>
+        <p class="ngo-name">Hosted by {{ activity.ngoName }}</p>
+      </div>
+      <span class="badge" [ngClass]="{
+        'badge-open': activity.status === 'open',
+        'badge-full': activity.status === 'full',
+        'badge-closed': activity.status === 'closed'
+      }">{{ activity.status | titlecase }}</span>
+    </div>
+
+    <p class="description">{{ activity.description }}</p>
+
+    <div class="grid grid-3 info-grid">
+      <div><strong><i class="bi bi-calendar-event"></i> Date</strong><br />{{ activity.date }}</div>
+      <div><strong><i class="bi bi-clock"></i> Time</strong><br />{{ activity.startTime }} - {{ activity.endTime }}</div>
+      <div><strong><i class="bi bi-geo-alt"></i> Location</strong><br />{{ activity.location }}</div>
+      <div><strong><i class="bi bi-ticket-perforated"></i> Slots</strong><br />{{ activity.registeredSlots }} / {{ activity.totalSlots }} filled</div>
+      <div><strong><i class="bi bi-hourglass-split"></i> Registration Cutoff</strong><br />{{ activity.registrationCutoffHours }} hours before start</div>
+    </div>
+
+    <p class="feedback" *ngIf="feedback">{{ feedback }}</p>
+
+    <button class="btn btn-primary" *ngIf="!isRegistered" [disabled]="!canRegister || processing" (click)="register()">
+      {{ processing ? 'Registering...' : (canRegister ? 'Register Now' : (activity.status === 'full' ? 'Activity Full' : 'Registration Closed')) }}
+    </button>
+
+    <p class="already-registered" *ngIf="isRegistered"><i class="bi bi-patch-check-fill"></i> You are registered for this activity. See "My Registrations" for check-in.</p>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<h2>My Registrations</h2>
+
+<app-spinner *ngIf="loading" label="Loading your registrations..."></app-spinner>
+
+<div class="card" *ngIf="!loading">
+  <table *ngIf="rows.length; else none">
+    <thead>
+      <tr>
+        <th>Activity</th>
+        <th>Date</th>
+        <th>Registered On</th>
+        <th>Check-in</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows">
+        <td>
+          <a [routerLink]="['/employee/activities', row.activity.id]">{{ row.activity.title }}</a>
+        </td>
+        <td>{{ row.activity.date }}</td>
+        <td>{{ row.registration.registeredOn | date:'medium' }}</td>
+        <td>
+          <span *ngIf="row.registration.checkedIn" class="badge badge-open">Checked In</span>
+          <span *ngIf="!row.registration.checkedIn" class="badge badge-closed">Not Checked In</span>
+        </td>
+        <td>
+          <button class="btn btn-outline" (click)="askCancel(row)">Cancel</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #none>
+    <p class="muted">You haven't registered for any activities yet.</p>
+  </ng-template>
+</div>
+
+<app-confirmation-dialog
+  [visible]="showConfirm"
+  title="Cancel Registration"
+  message="Are you sure you want to cancel this registration? Your slot will be released."
+  confirmLabel="Yes, Cancel"
+  cancelLabel="Keep Registration"
+  (confirmed)="confirmCancel()"
+  (cancelled)="showConfirm = false">
+</app-confirmation-dialog>

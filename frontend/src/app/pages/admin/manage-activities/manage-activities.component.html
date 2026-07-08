@@ -1,0 +1,44 @@
+<div class="header-row">
+  <h2>Manage Activities</h2>
+  <a class="btn btn-primary" routerLink="/admin/add-activity"><i class="bi bi-plus-lg"></i> Add Activity</a>
+</div>
+
+<app-spinner *ngIf="loading" label="Loading activities..."></app-spinner>
+
+<div class="card" *ngIf="!loading">
+  <table>
+    <thead>
+      <tr><th>Title</th><th>NGO</th><th>Date</th><th>Slots</th><th>Status</th><th></th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of activities">
+        <td>{{ a.title }}</td>
+        <td>{{ a.ngoName }}</td>
+        <td>{{ a.date }}</td>
+        <td>{{ a.registeredSlots }} / {{ a.totalSlots }}</td>
+        <td>
+          <span class="badge" [ngClass]="{
+            'badge-open': a.status === 'open',
+            'badge-full': a.status === 'full',
+            'badge-closed': a.status === 'closed'
+          }">{{ a.status | titlecase }}</span>
+        </td>
+        <td class="actions">
+          <a class="btn btn-outline" [routerLink]="['/admin/edit-activity', a.id]">Edit</a>
+          <a class="btn btn-outline" [routerLink]="['/admin/participants', a.id]">Participants</a>
+          <button class="btn btn-danger" (click)="askDelete(a)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="muted" *ngIf="!activities.length">No activities yet. Click "Add Activity" to create one.</p>
+</div>
+
+<app-confirmation-dialog
+  [visible]="showConfirm"
+  title="Delete Activity"
+  [message]="'Are you sure you want to delete \'' + (toDelete?.title || '') + '\'? This cannot be undone.'"
+  confirmLabel="Delete"
+  (confirmed)="confirmDelete()"
+  (cancelled)="showConfirm = false">
+</app-confirmation-dialog>

@@ -1,0 +1,36 @@
+<app-spinner *ngIf="loading" label="Loading admin dashboard..."></app-spinner>
+
+<div *ngIf="!loading && summary">
+  <h2>Admin Dashboard</h2>
+
+  <div class="grid grid-4" style="margin-bottom: 1.5rem;">
+    <app-stats-card label="Total Activities" [value]="summary.totalActivities" icon="bi-clipboard-check" accent="primary"></app-stats-card>
+    <app-stats-card label="Open Activities" [value]="summary.openActivities" icon="bi-check2-circle" accent="accent"></app-stats-card>
+    <app-stats-card label="Total Registrations" [value]="summary.totalRegistrations" icon="bi-journal-text" accent="primary"></app-stats-card>
+    <app-stats-card label="Checked In" [value]="summary.totalCheckedIn" icon="bi-patch-check" accent="accent"></app-stats-card>
+  </div>
+
+  <h3>Recent Activities</h3>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Title</th><th>NGO</th><th>Date</th><th>Slots</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of recentActivities">
+          <td><a [routerLink]="['/admin/edit-activity', a.id]">{{ a.title }}</a></td>
+          <td>{{ a.ngoName }}</td>
+          <td>{{ a.date }}</td>
+          <td>{{ a.registeredSlots }} / {{ a.totalSlots }}</td>
+          <td>
+            <span class="badge" [ngClass]="{
+              'badge-open': a.status === 'open',
+              'badge-full': a.status === 'full',
+              'badge-closed': a.status === 'closed'
+            }">{{ a.status | titlecase }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

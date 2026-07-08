@@ -1,0 +1,6 @@
+.checkin-card { max-width: 460px; }
+.hint { font-size: .78rem; color: var(--muted); margin-top: .25rem; }
+.message { margin-top: 1rem; font-weight: 500; }
+.message.success { color: var(--primary); }
+.message.error { color: var(--danger); }
+.muted { color: var(--muted); }

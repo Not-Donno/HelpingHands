@@ -1,0 +1,18 @@
+<h2>QR Code Generator</h2>
+<p class="muted">Generate a printable check-in QR code for a Service Day activity venue.</p>
+
+<div class="card qr-card">
+  <div class="form-group">
+    <label for="activity">Activity</label>
+    <select id="activity" [(ngModel)]="selectedActivityId" (ngModelChange)="generate()">
+      <option *ngFor="let a of activities" [value]="a.id">{{ a.title }} — {{ a.date }}</option>
+    </select>
+  </div>
+
+  <div class="qr-preview" *ngIf="qrDataUrl">
+    <img [src]="qrDataUrl" alt="Check-in QR code" />
+    <p class="code-value">{{ checkinCode }}</p>
+  </div>
+
+  <button class="btn btn-primary" (click)="print()" [disabled]="!qrDataUrl">Print QR Code</button>
+</div>

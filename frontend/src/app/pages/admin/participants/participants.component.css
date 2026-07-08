@@ -1,0 +1,2 @@
+.back-link { display: inline-flex; align-items: center; gap: .3rem; margin-bottom: 1rem; font-size: .88rem; font-weight: 600; }
+.muted { color: var(--muted); }

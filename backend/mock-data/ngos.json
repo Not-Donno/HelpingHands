@@ -1,0 +1,6 @@
+[
+  { "id": "ngo1", "name": "Green Earth Initiative", "focusArea": "Environment", "description": "Community reforestation and beach clean-up programs.", "contactEmail": "contact@greenearth.org" },
+  { "id": "ngo2", "name": "Bright Futures Foundation", "focusArea": "Education", "description": "Tutoring and mentorship for underprivileged children.", "contactEmail": "hello@brightfutures.org" },
+  { "id": "ngo3", "name": "Golden Years Care", "focusArea": "Elderly Care", "description": "Companionship and support services for senior citizens.", "contactEmail": "info@goldenyears.org" },
+  { "id": "ngo4", "name": "Paws & Shelter", "focusArea": "Animal Welfare", "description": "Animal shelter maintenance and adoption drives.", "contactEmail": "team@pawsshelter.org" }
+]
