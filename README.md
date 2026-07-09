@@ -21,8 +21,7 @@ Angular front-end web application for a corporate **Service Day Dashboard**, bui
 11. [Building for Production](#building-for-production)
 12. [Architecture Notes (MVC Mapping)](#architecture-notes-mvc-mapping)
 13. [Troubleshooting](#troubleshooting)
-14. [Roadmap / Still To Do](#roadmap--still-to-do)
-15. [License](#license)
+14. [License](#license)
 
 ---
 
@@ -303,16 +302,6 @@ Modularity:
 
 ---
 
-## Roadmap / Still To Do
-
-The Angular source code is complete, but per the BIT210 submission checklist, the following still need to be produced **outside this repository** before final submission:
-
-1. **Video** — a screen-recorded walkthrough of the app in a user-manual style (employee flow + admin flow).
-2. **Project report** — technology justification (with literature support), setup/installation guide, and user manuals for both roles.
-3. **Turnitin report** — similarity report for the written project report.
-4. **Signed assignment cover sheet**.
-
----
 
 ## License
 
